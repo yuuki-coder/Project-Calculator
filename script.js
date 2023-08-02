@@ -11,6 +11,7 @@ let plus = document.querySelector(".plus");
 let minus = document.querySelector(".minus");
 let array = [];
 let newArray = [];
+let total;
 
 button.forEach((element) =>
   element.addEventListener("click", () => {
@@ -44,12 +45,14 @@ del.addEventListener("click", () => {
 plus.addEventListener("click", () => {
   if (array.length == 0) {
   } else {
-    array.push(" + ");
-    console.table(array);
-    topScreen.innerText += ` ${array.join("")} `;
-    newArray.push(array.join(""));
+    topScreen.innerText += ` ${array.join("")} +  `;
+    newArray.push(Number(array.join("")));
+
     array = [];
   }
+  total = newArray.reduce((sum, element) => sum + element, 0);
+  console.log(total);
+  bottomScreen.innerText = total;
 });
 
 minus.addEventListener("click", () => {
