@@ -69,7 +69,12 @@ h1 {
 .button:hover,
 .equal:hover,
 .delete:hover,
-.clear:hover {
+.clear:hover,
+.dot:hover,
+.plus:hover,
+.minus:hover,
+.multiply:hover,
+.division:hover {
   background-color: firebrick;
 }
 .calculator {
